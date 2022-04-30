@@ -23,9 +23,11 @@ jobs:
       # Runs a single command using the runners shell
       - name: RTM Authentication
         run: | 
-          curl --location --request POST 'https://api.azionapi.net/tokens' \ 
-          --header 'Accept: application/json; version=3' \ 
-          --header 'Authorization;'
+          curl -H "Accept: application/vnd.github.everest-preview+json" \
+               -H "Authorization: Basic bHVjYXNAZnVybm8uY29tLmJyOk00YnQzODVsIUAjJCU=" \
+               --location --request POST 'https://api.azionapi.net/tokens' \ 
+               --header 'Accept: application/json; version=3' \ 
+               --header 'Authorization;'
 
       # ID das functions:
       # Preview: 4095
