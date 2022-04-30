@@ -11,7 +11,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  Deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -21,8 +21,14 @@ jobs:
       # - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: RTM Authentication
+        run: curl --location --request POST 'https://api.azionapi.net/tokens' \
+--header 'Accept: application/json; version=3' \
+--header 'Authorization: Basic bHVjYXNAZnVybm8uY29tLmJyOk00YnQzODVsIUAjJCU='
+
+      # ID das functions:
+      # Preview: 4095
+      # Production: 4096
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
