@@ -22,7 +22,14 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Deploy
-        run: echo Test Deploy OK
+        run: echo Start Deploy
+        run: |
+          data > generateFile.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "New File"
+          git push
 
       # ID das functions:
       # Preview: 4095
