@@ -24,7 +24,7 @@ jobs:
       - name: RTM Authentication
         run: | 
           curl --location --request POST 'https://api.azionapi.net/tokens' \ 
-               --header 'Accept: application/json; version=3' \ 
+               --header 'Accept: application/json; version=latest' \ 
                --header 'Authorization: Basic bHVjYXNAZnVybm8uY29tLmJyOk00YnQzODVsIUAjJCU='
 
       # ID das functions:
