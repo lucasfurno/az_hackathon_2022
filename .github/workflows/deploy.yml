@@ -23,9 +23,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: RTM Authentication
         run: | 
-          curl --location --request POST 'https://api.azionapi.net/tokens' \ 
-               --header 'Accept: application/json; version=3' \ 
-               --header 'Authorization: Basic a3d9aa2d2b41cd11c98dae412ebced889b016521'
+          curl --location --request GET 'https://api.azionapi.net/edge_functions' \
+               --header 'Accept: application/json; version=3' \
+               --header 'Authorization: Token Basic a3d9aa2d2b41cd11c98dae412ebced889b016521' \
+               --header 'Content-Type: application/json'
 
       # ID das functions:
       # Preview: 4095
